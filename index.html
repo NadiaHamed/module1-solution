@@ -6,24 +6,22 @@
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <style>
       .message { font-size: 1.3em; font-weight: bold; }
-    </style>
+    </style><script type="text/javascript" src="angular.min.js"> </script>
+    <script type="text/javascript" src="app.js"> </script>
   </head>
-<body>
-   <div class="container">
-     <h1>Lunch Checker</h1>
+ 
+<body ng-app="LunchCheck">
+ <p>Please enter your lunch using comma: </p>
 
-         <div class="form-group">
-             <input id="lunch-menu" type="text"
-             placeholder="list comma separated dishes you usually have for lunch"
-             class="form-control">
-         </div>
-         <div class="form-group">
-             <button class="btn btn-default">Check If Too Much</button>
-         </div>
-         <div class="form-group message">
-           <!-- Your message can go here. -->
-         </div>
-   </div>
+ <div id="target" ng-controller="LunchCheckController">
+   <input type = "text "  ng-model = "lunch"></input>
+   <br>
+   (Example : item1,item2,item3 also empty and space item is not valid as item )
+   <br><br>
+   <button type="button" ng-click="checkLunch()"><p>Check If Too Much</p></button>
+
+   <p ng-style = "color" >{{message}}<p>
+ </div>
 
 </body>
 </html>
